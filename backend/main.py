@@ -31,4 +31,4 @@ async def detect_emotion(file: UploadFile = File(...)):
 # Add this block to ensure the app works with Gunicorn
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=10000)
+    uvicorn.run(app, host="0.0.0.0", port=10000)  # Use port 10000 for Render

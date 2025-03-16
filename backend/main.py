@@ -14,6 +14,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Root endpoint
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Emotion Detection API!"}
+
 @app.post("/detect-emotion")
 async def detect_emotion(file: UploadFile = File(...)):
     # Read the image file
@@ -31,4 +36,4 @@ async def detect_emotion(file: UploadFile = File(...)):
 # Add this block to ensure the app works with Gunicorn
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=10000)  # Use port 10000 for Render
+    uvicorn.run(app, host="0.0.0.0", port=10000)

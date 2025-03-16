@@ -20,8 +20,8 @@ captureButton.addEventListener("click", async () => {
 
     const image = canvas.toDataURL("image/jpeg");
 
-    // Send the image to the FastAPI backend
-    const response = await fetch("http://localhost:8000/detect-emotion", {
+    // Send the image to the deployed FastAPI backend on Render
+    const response = await fetch("https://emotion-detection-app-bvda.onrender.com/detect-emotion", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
